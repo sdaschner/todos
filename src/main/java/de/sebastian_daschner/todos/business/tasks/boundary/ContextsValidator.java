@@ -32,7 +32,7 @@ public class ContextsValidator implements ConstraintValidator<Contexts, Set<Stri
     @Override
     public boolean isValid(Set<String> value, ConstraintValidatorContext context) {
         if (value != null) {
-            return value.stream().allMatch(Objects::nonNull) && value.stream().allMatch(c -> c.matches("[a-z]+"));
+            return value.stream().allMatch(Objects::nonNull) && value.stream().allMatch(c -> c.matches("[a-z0-9]+"));
         }
         return true;
     }

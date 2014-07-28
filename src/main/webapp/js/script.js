@@ -35,7 +35,7 @@ de.sd.todos = {
                 ev.preventDefault();
 
                 var input = jQuery('input#addTask_name').val();
-                if (!/^[^@]+(@[a-z]+\s*)*$/.test(input)) {
+                if (!/^[^@]+(@[a-z0-9]+\s*)*$/.test(input)) {
                     jQuery('input#addTask_name').addClass("error");
                     return;
                 }
@@ -56,7 +56,7 @@ de.sd.todos = {
                 ev.preventDefault();
 
                 var input = jQuery('input#filterTasks_filter').val();
-                if (!/^[^@]*(@[a-z]+\s*)*$/.test(input)) {
+                if (!/^[^@]*(@[a-z0-9]+\s*)*$/.test(input)) {
                     jQuery('input#filterTasks_filter').addClass("error");
                     return;
                 }
@@ -136,7 +136,7 @@ de.sd.todos = {
                     $input = $this.find('input[type=text]'),
                     inputText = $input.val()
                 ;
-                if (!/^[^@]*(@[a-z]+\s*)*$/.test(inputText)) {
+                if (!/^[^@]*(@[a-z0-9]+\s*)*$/.test(inputText)) {
                     $input.addClass("error");
                     return;
                 }
@@ -360,7 +360,7 @@ de.sd.todos = {
     },
 
     extractValues: function(query) {
-        var contextMatches = query.match(/@[a-z]+/g) || [],
+        var contextMatches = query.match(/@[a-z0-9]+/g) || [],
         object = {
             name : contextMatches.length ? query.substring(0, query.indexOf("@")) : query,
             contexts : []
