@@ -3,22 +3,20 @@
 <head>
     <title>Sebastian's TODO's</title>
     <meta charset="utf-8"/>
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="js/script.js"></script>
+    <link href="presentation/style.css" rel="stylesheet" />
+    <script src="behavior/script.js"></script>
 </head>
 <body>
     <div class="full">
         <h1>Tasks</h1>
         <form id="filterTasks" action="#">
-            <input name="filter" id="filterTasks_filter" type="text" />
+            <input name="filter" id="filterTasks_filter" placeholder="Filter tasks ..." type="text" />
             <a class="filter button" href="#">Filter</a>
             <a class="resetFilter button hide" href="#">Remove</a>
             <input class="invisible" type="submit" />
         </form>
         <form id="addTask" action="#">
-            <input name="name" id="addTask_name" type="text" />
+            <input name="name" id="addTask_name" placeholder="Add new task ..." type="text" />
             <a class="addTask button" href="#">Add</a>
             <input class="invisible" type="submit" />
         </form>
