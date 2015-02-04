@@ -29,7 +29,7 @@ import java.lang.annotation.*;
 @Documented
 public @interface Contexts {
 
-    String message() default "Context definitions are required to be and [a-z]+";
+    String message() default "Context definitions are required to match [a-z0-9]+";
 
     Class<?>[] groups() default {};
 

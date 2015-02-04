@@ -25,6 +25,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <build>
         <finalName>${project.name}</finalName>
     </build>

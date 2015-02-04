@@ -31,7 +31,7 @@ public class TaskStore {
     EntityManager entityManager;
 
     public List<Task> listAll() {
-        return entityManager.createNamedQuery("Task.findAll").getResultList();
+        return entityManager.createNamedQuery("Task.findAll", Task.class).getResultList();
     }
 
     public List<Task> filterAll(final Filter filter) {

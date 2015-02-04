@@ -10,6 +10,7 @@ import org.mockito.Mockito;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -23,9 +24,9 @@ public class TaskStoreTest {
     public void setUp() {
         cut = new TaskStore();
         cut.entityManager = Mockito.mock(EntityManager.class);
-        Query mockQuery = Mockito.mock(Query.class);
+        TypedQuery mockQuery = Mockito.mock(TypedQuery.class);
 
-        Mockito.when(cut.entityManager.createNamedQuery(Matchers.anyString())).thenReturn(mockQuery);
+        Mockito.when(cut.entityManager.createNamedQuery(Matchers.anyString(), Matchers.any())).thenReturn(mockQuery);
         Mockito.when(mockQuery.getResultList()).thenReturn(sampleTasks());
     }
 
